@@ -1,0 +1,70 @@
+body {
+   background-color: hsl(229, 57%, 11%);
+   color: #FFF;
+}
+
+main {
+   display: flex;
+   grid-gap: 2rem;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   padding: 0 1rem;
+}
+
+.conteiner {
+   background-color: hsl(228, 56%, 26%);
+   padding: 2rem;
+}
+
+@media (max-width: 1000px) {
+   main {
+      flex-flow: column;
+      background:url("../images/bg/bg-mobile.png") no-repeat center / cover;
+   }
+
+   .conteiner {
+      width: calc(90% - 4rem);
+   }
+
+   .progress p:last-child {
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #FFF;
+      border-radius: 10px;
+      color: #000;
+      padding: 1rem;
+      width: max-content;
+   }
+}
+
+@media (min-width: 1000px) {
+   main {
+      flex-direction: row;
+      background: url("../images/bg/bg-desktop.png") no-repeat left bottom / contain;
+   }
+
+   .arquivos {
+      padding: 2rem 10rem 2rem 2rem;
+   }
+
+   .progress {
+      position: relative;
+      width: 600px;
+      margin-top: 3rem;
+   }
+
+   .progress p:last-child {
+      top: -30%;
+      left: 75%;
+   }
+   
+   .progress p:last-child::after {
+      content: "";
+      position: absolute;
+      border-left: 30px solid transparent;
+      border-top: 20px solid #FFF;
+      bottom: -19px;
+      left: calc(100% - 29px);
+   }
+}
